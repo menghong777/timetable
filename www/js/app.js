@@ -20,5 +20,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    
+    // Parse Initialize with Parse app ID anf JavaScript key
+    // Parse.initialize("YXxvNWOP7OLWNyGai4SNrRzLxjNPgm5IxhIkJaNm", "pCMPuFsY7fHZtzDLedfFSZZZ6RA3fpT19E25sygi");
   });
 })

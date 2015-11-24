@@ -3,15 +3,20 @@
 	<form class="list">
 	  <ion-list>
 		<label class="item item-input">
+		  <span class="input-label">Username</span>
+		  <input type="text" placeholder="Student ID" ng-model="data.username">
+		</label>
+		<label class="item item-input">
 		  <span class="input-label">Email</span>
-		  <input type="text" placeholder="">
+		  <input type="email" placeholder="University email" ng-model="data.email">
 		</label>
 		<label class="item item-input">
 		  <span class="input-label">Password</span>
-		  <input type="text" placeholder="">
+		  <input type="text" placeholder="At least 6 characters" ng-model="data.password">
 		</label>
 	  </ion-list>
-	  <a class="button button-stable button-block" href="#/tab/timetable">Create account</a>
+	  <button class="button button-stable button-block" ng-click="signupEmail()">Create account</button>
+	  <button class="button button-positive button-block"><i class="ion-social-facebook"></i> Signup with Facebook</button>
 	</form>
   </ion-content>
 </ion-view>

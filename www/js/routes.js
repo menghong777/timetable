@@ -28,7 +28,7 @@ angular.module('starter.routes', [])
   .state('signup', {
     url: '/signup-profile',
     templateUrl: 'templates/signup-profile.html',
-    controller: 'ProfileCtrl'
+    controller: 'ProfileSignUpCtrl'
   })
   
   // setup an abstract state for the tabs directive
