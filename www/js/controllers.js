@@ -1,7 +1,14 @@
 angular.module('starter.controllers', [])
 
+.controller('StartCtrl', function($scope, $state, $rootScope) {
+  console.log($rootScope.isLoggedIn);
+  if ($rootScope.isLoggedIn) {
+    $state.go('tab.timetable');
+  }
+})
+
 .controller('SelectUniversityCtrl', function($scope) {})
-.controller('ProfileSignUpCtrl', function($scope, $state) {
+.controller('ProfileSignUpCtrl', function($scope, $state, $ionicHistory) {
   $scope.data = {};
   
   $scope.signupEmail = function(){
@@ -16,7 +23,12 @@ angular.module('starter.controllers', [])
     
     user.signUp(null, {
       success: function(user) {
-        alert("User created.");
+        // alert("User created.");
+        
+        $ionicHistory.nextViewOptions({
+          disableBack: true
+        });
+        
         $state.go('tab.timetable');
       },
       error: function(user, error) {
@@ -25,14 +37,19 @@ angular.module('starter.controllers', [])
     });
   };
 })
-.controller('LoginCtrl', function($scope, $state) {
+.controller('LoginCtrl', function($scope, $state, $ionicHistory) {
   $scope.data = {};
   
-  $scope.loginEmail = function(){
+  $scope.loginEmail = function() {
     Parse.User.logIn($scope.data.username, $scope.data.password, {
       success: function(user) {
         console.log(user);
-        alert("Logged in.");
+        // alert("Logged in.");
+        
+        $ionicHistory.nextViewOptions({
+          disableBack: true
+        });
+        
         $state.go('tab.timetable');
       },
       error: function(user, error) {
@@ -40,8 +57,26 @@ angular.module('starter.controllers', [])
       }
     })
   };
+  
+  // $scope.FacebookLogin = function() {
+  //   Parse.FacebookUtils.logIn(null, {
+  //     success: function(user) {
+  //       console.log(user);
+  //       if (!user.existed()) {
+  //         alert("User signed up and logged in through Facebook.");
+  //       } else {
+  //         alert("User logged in through Facebook.");
+  //       }
+  //     },
+  //     error: function(user, error) {
+  //       alert("User cancelled the Facebook login or did not fully authorize.")
+  //     }
+  //   })
+  // };
 })
-.controller('TimetableCtrl', function($scope) {})
+.controller('TimetableCtrl', function($scope) {
+
+})
 .controller('TimetableAddCtrl', function($scope) {})
 .controller('TimetableEditDayCtrl', function($scope) {})
 .controller('TimetableEditCtrl', function($scope) {})
@@ -65,6 +100,12 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
-  
+.controller('AccountCtrl', function($scope, $state, $rootScope) {
+  $scope.logout = function() {
+    Parse.User.logOut();
+    $rootScope.isLoggedIn = false;
+    $state.go('start', {
+      clear: true
+    });
+  };
 });

@@ -10,7 +10,8 @@ angular.module('starter.routes', [])
   
   .state('start', {
     url: '/start',
-    templateUrl: 'templates/start.html'
+    templateUrl: 'templates/start.html',
+    controller: 'StartCtrl'
   })
   
   .state('login', {
