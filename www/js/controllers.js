@@ -74,10 +74,8 @@ angular.module('starter.controllers', [])
   //   })
   // };
 })
-.controller('TimetableCtrl', function($scope) {
 
-})
-.controller('TimetableAddCtrl', function($scope) {})
+
 .controller('TimetableEditDayCtrl', function($scope) {})
 .controller('TimetableEditCtrl', function($scope) {})
 
@@ -100,7 +98,29 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope, $state, $rootScope) {
+.controller('AccountCtrl', function($scope, $state, $rootScope, $cordovaCamera) {
+  // Camera
+  $scope.getPhoto = function() {
+    var options = {
+      quality: 100,
+      destinationType: Camera.DestinationType.DATA_URL,
+      sourceType: Camera.PictureSourceType.CAMERA,
+      allowEdit: true,
+      encodingType: Camera.EncodingType.JPEG,
+      targetWidth: 1000,
+      targetHeight: 1000,
+      popoverOptions: CameraPopoverOptions,
+      saveToPhotoAlbum: false,
+      correctOrientation:true
+    };
+    
+    $cordovaCamera.getPicture(options).then(function(imageData) {
+        var image = document.getElementById('myImage');
+        image.src = "data:image/jpeg;base64," + imageData;
+    }, function(err) {
+    });
+  };
+    
   $scope.logout = function() {
     Parse.User.logOut();
     $rootScope.isLoggedIn = false;
