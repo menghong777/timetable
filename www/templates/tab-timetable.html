@@ -1,18 +1,10 @@
 <ion-view view-title="Timetable">
   <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-divider">Next class (1.30pm to 3.30pm)</div>
+    <div class="list card" ng-repeat="thing in things" href="">
+      <div class="item item-divider">{{thing.day}}</div>
       <div class="item item-body">
         <div>
-          Mobile Technology at <b>Lab 001</b>
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Later (4.30pm to 6.00pm)</div>
-      <div class="item item-body">
-        <div>
-          C++ Programming at <b>Lab 002</b>
+          {{thing.module}} at <b>{{thing.start_time}}</b>
         </div>
       </div>
     </div>

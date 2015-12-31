@@ -2,14 +2,14 @@
   <ion-content class="padding">
       <form class="list">
         <label class="item item-input">
-          <span class="input-label">Module</span><input type="text">
+          <span class="input-label">Module</span><input type="text" name="module" ng-model="newThing.module">
         </label>
         <label class="item item-input">
-          <span class="input-label">Code</span><input type="text">
+          <span class="input-label">Code</span><input type="text" name="code" ng-model="newThing.code">
         </label>
         <label class="item item-select">
           <span class="input-label">Select day</span>
-          <select>
+          <select name="day" ng-model="newThing.day">
             <option>Monday</option>
             <option>Tuesday</option>
             <option>Wednesday</option>
@@ -20,18 +20,27 @@
           </select>
         </label>
         <label class="item item-input">
-          <span class="input-label">Time</span><input type="text">
+          <span class="input-label">Start time</span><input type="text" name="start_time" ng-model="newThing.start_time">
         </label>
         <label class="item item-input">
-          <span class="input-label">Venue</span><input type="text">
+          <span class="input-label">End time</span><input type="text" name="end_time" ng-model="newThing.end_time">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Venue</span><input type="text" name="venue" ng-model="newThing.venue">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Lecturer</span><input type="text" name="lecturer" ng-model="newThing.lecturer">
         </label>
         <div class="spacer" style="height: 40px;"></div>
         <!--<button type="submit" class="button button-balanced button-block">Save changes</button>-->
+        <button type="submit" class="button button-balanced button-block" ng-click="add(newThing)">
+            Save changes
+        </button>
       </form>
   </ion-content>
-  <div class="bar bar-footer bar-balanced item-input-inset">
-    <button class="button button-clear button-block">
+  <!--<div class="bar bar-footer bar-balanced item-input-inset">-->
+    <!--<button class="button button-clear button-block" ng-click="add(newThing)">
       Save changes
-    </button>
-  </div>
+    </button>-->
+  <!--</div>-->
 </ion-view>
