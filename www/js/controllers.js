@@ -11,10 +11,11 @@ angular.module('starter.controllers', [])
 .controller('ProfileSignUpCtrl', function($scope, $state, $ionicHistory) {
   $scope.data = {};
   
-  $scope.signupEmail = function(){
+  $scope.signupEmail = function() {
     // Create a new user on Parse
     var user = new Parse.User();
     user.set("username", $scope.data.username);
+    user.set("university", $scope.data.university);
     user.set("password", $scope.data.password);
     user.set("email", $scope.data.email);
     
@@ -120,7 +121,7 @@ angular.module('starter.controllers', [])
     }, function(err) {
     });
   };
-    
+
   $scope.logout = function() {
     Parse.User.logOut();
     $rootScope.isLoggedIn = false;

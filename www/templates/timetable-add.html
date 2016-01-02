@@ -1,15 +1,15 @@
 <ion-view view-title="Add a class">
   <ion-content class="padding">
-      <form class="list">
+      <form name="timetableForm" class="list" novalidate>
         <label class="item item-input">
-          <span class="input-label">Module</span><input type="text" name="module" ng-model="newThing.module">
+          <span class="input-label">Module</span><input type="text" name="module" ng-model="newThing.module" required>
         </label>
         <label class="item item-input">
-          <span class="input-label">Code</span><input type="text" name="code" ng-model="newThing.code">
+          <span class="input-label">Code</span><input type="text" name="code" ng-model="newThing.code" required>
         </label>
         <label class="item item-select">
           <span class="input-label">Select day</span>
-          <select name="day" ng-model="newThing.day">
+          <select name="day" ng-model="newThing.day" required>
             <option>Monday</option>
             <option>Tuesday</option>
             <option>Wednesday</option>
@@ -19,21 +19,82 @@
             <option>Sunday</option>
           </select>
         </label>
-        <label class="item item-input">
-          <span class="input-label">Start time</span><input type="text" name="start_time" ng-model="newThing.start_time">
+        <label class="item item-select">
+          <!--<span class="input-label">Start time</span><input type="text" name="start_time" ng-model="newThing.start_time" required>-->
+          <span class="input-label">Select start time</span>
+          <select name="day" name="start_time" ng-model="newThing.start_time" required>
+            <option>07:00 AM</option>
+            <option>08:00 AM</option>
+            <option>09:00 AM</option>
+            <option>10:00 AM</option>
+            <option>11:00 AM</option>
+            <option>12:00 PM</option>
+            <option>01:00 PM</option>
+            <option>02:00 PM</option>
+            <option>03:00 PM</option>
+            <option>04:00 PM</option>
+            <option>05:00 PM</option>
+            <option>06:00 PM</option>
+            <option>07:00 PM</option>
+            <option>08:00 PM</option>
+            <option>09:00 PM</option>
+            <option>11:00 PM</option>
+            <option>12:00 AM</option>
+            <option>01:00 AM</option>
+            <option>02:00 AM</option>
+            <option>03:00 AM</option>
+            <option>04:00 AM</option>
+            <option>05:00 AM</option>
+            <option>06:00 AM</option>
+          </select>
+        </label>
+        <label class="item item-select">
+          <!--<span class="input-label">End time</span><input type="text" name="end_time" ng-model="newThing.end_time" required>-->
+          <span class="input-label">Select end time</span>
+          <select name="day" name="end_time" ng-model="newThing.end_time" required>
+            <option>07:00 AM</option>
+            <option>08:00 AM</option>
+            <option>09:00 AM</option>
+            <option>10:00 AM</option>
+            <option>11:00 AM</option>
+            <option>12:00 PM</option>
+            <option>01:00 PM</option>
+            <option>02:00 PM</option>
+            <option>03:00 PM</option>
+            <option>04:00 PM</option>
+            <option>05:00 PM</option>
+            <option>06:00 PM</option>
+            <option>07:00 PM</option>
+            <option>08:00 PM</option>
+            <option>09:00 PM</option>
+            <option>11:00 PM</option>
+            <option>12:00 AM</option>
+            <option>01:00 AM</option>
+            <option>02:00 AM</option>
+            <option>03:00 AM</option>
+            <option>04:00 AM</option>
+            <option>05:00 AM</option>
+            <option>06:00 AM</option>
+          </select>
         </label>
         <label class="item item-input">
-          <span class="input-label">End time</span><input type="text" name="end_time" ng-model="newThing.end_time">
+          <span class="input-label">Venue</span><input type="text" name="venue" ng-model="newThing.venue" required>
         </label>
         <label class="item item-input">
-          <span class="input-label">Venue</span><input type="text" name="venue" ng-model="newThing.venue">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Lecturer</span><input type="text" name="lecturer" ng-model="newThing.lecturer">
+          <span class="input-label">Lecturer</span><input type="text" name="lecturer" ng-model="newThing.lecturer" required>
         </label>
         <div class="spacer" style="height: 40px;"></div>
         <!--<button type="submit" class="button button-balanced button-block">Save changes</button>-->
-        <button type="submit" class="button button-balanced button-block" ng-click="add(newThing)">
+        <div class="padding">
+            <p ng-show="timetableForm.module.$error.required">* Module name is required</p>
+            <p ng-show="timetableForm.code.$error.required">* Module code is required</p>
+            <p ng-show="timetableForm.day.$error.required">* Day is required</p>
+            <p ng-show="timetableForm.start_time.$error.required">* Start time is required</p>
+            <p ng-show="timetableForm.end_time.$error.required">* End time is required</p>
+            <p ng-show="timetableForm.venue.$error.required">* Venue is required</p>
+            <p ng-show="timetableForm.lecturer.$error.required">* Lecturer name is required</p>
+        </div>
+        <button type="submit" class="button button-balanced button-block" ng-click="add(newThing)" ng-disabled="timetableForm.$invalid">
             Save changes
         </button>
       </form>

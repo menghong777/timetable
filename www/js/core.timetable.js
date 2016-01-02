@@ -84,20 +84,21 @@ angular.module('starter.timetable', [])
 //   };
 // })
 
-.controller('TimetableCtrl', function($scope, StorageService) {
+.controller('TimetableCtrl', function($scope, $state, StorageService) {
     // $scope.timetables = Timetables.all();
     $scope.things = StorageService.getAll();
     
-    // $scope.add = function(newThing) {
-    //     StorageService.add(newThing);
-    // };
+    $scope.add = function(newThing) {
+        StorageService.add(newThing);
+        $state.go('tab.timetable');
+    };
     
     $scope.remove = function(thing) {
         StorageService.remove(thing);
     };
 })
 
-.controller('TimetableAddCtrl', function($scope, $state, StorageService) {
+// .controller('TimetableAddCtrl', function($scope, $state, StorageService) {
     // Timetables.save($scope.timetables);
     
     // $scope.data = {};
@@ -107,12 +108,12 @@ angular.module('starter.timetable', [])
     // }
     
     // $state.go('tab.timetable');
-    $scope.add = function(newThing) {
-        StorageService.add(newThing);
-        $state.go('tab.timetable');
-    };
+    // $scope.add = function(newThing) {
+    //     StorageService.add(newThing);
+    //     $state.go('tab.timetable');
+    // };
     
-});
+// });
 // .factory('Timetables', function() {
 //     var timetable = {
 //         day: []

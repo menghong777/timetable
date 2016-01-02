@@ -54,25 +54,25 @@ angular.module('starter.routes', [])
     views: {
       'tab-timetable': {
         templateUrl: 'templates/timetable-add.html',
-        controller: 'TimetableAddCtrl'
+        controller: 'TimetableCtrl'
       }
     }
   })
-  .state('tab.timetable-edit_day', {
-    url: '/timetable-edit_day',
-    views: {
-      'tab-timetable': {
-        templateUrl: 'templates/timetable-edit-day.html',
-        controller: 'TimetableEditDayCtrl'
-      }
-    }
-  })
+//   .state('tab.timetable-edit_day', {
+//     url: '/timetable-edit_day',
+//     views: {
+//       'tab-timetable': {
+//         templateUrl: 'templates/timetable-edit-day.html',
+//         controller: 'TimetableEditDayCtrl'
+//       }
+//     }
+//   })
   .state('tab.timetable-edit', {
     url: '/timetable-edit',
     views: {
       'tab-timetable': {
         templateUrl: 'templates/timetable-edit.html',
-        controller: 'TimetableEditCtrl'
+        controller: 'TimetableCtrl'
       }
     }
   })

@@ -1,6 +1,13 @@
 <ion-view view-title="Edit class">
-  <ion-content class="padding">
-      <form class="list">
+  <ion-content class="">
+      <ion-list show-delete="false" can-swipe="true">
+          <ion-item ng-repeat="thing in things">
+              {{thing.module}} on {{thing.day}}
+              <ion-option-button class="button-assertive ion-trash-b" ng-click="remove(thing)"></ion-option-button>
+              <!--<ion-delete-button class="ion-trash-b" ng-click="remove(thing)"></ion-delete-button>-->
+          </ion-item>
+      </ion-list>
+      <!--<form class="list">
         <label class="item item-input">
           <span class="input-label">Subject</span><input type="text">
         </label>
@@ -26,12 +33,12 @@
           <span class="input-label">Venue</span><input type="text">
         </label>
         <div class="spacer" style="height: 40px;"></div>
-        <!--<button type="submit" class="button button-balanced button-block">Save changes</button>-->
-      </form>
+        <!--<button type="submit" class="button button-balanced button-block">Save changes</button>
+      </form>-->
   </ion-content>
-  <div class="bar bar-footer bar-balanced item-input-inset">
+  <!--<div class="bar bar-footer bar-balanced item-input-inset">
     <button class="button button-clear button-block">
       Save changes
-    </button>
+    </button>-->
   </div>
 </ion-view>
