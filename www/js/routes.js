@@ -20,11 +20,11 @@ angular.module('starter.routes', [])
     controller: 'LoginCtrl'
   })
   
-  .state('selectUni', {
-    url: '/signup-select_university',
-    templateUrl: 'templates/signup-select_university.html',
-    controller: 'SelectUniversityCtrl'
-  })
+//   .state('selectUni', {
+//     url: '/signup-select_university',
+//     templateUrl: 'templates/signup-select_university.html',
+//     controller: 'SelectUniversityCtrl'
+//   })
   
   .state('signup', {
     url: '/signup-profile',
@@ -58,15 +58,7 @@ angular.module('starter.routes', [])
       }
     }
   })
-//   .state('tab.timetable-edit_day', {
-//     url: '/timetable-edit_day',
-//     views: {
-//       'tab-timetable': {
-//         templateUrl: 'templates/timetable-edit-day.html',
-//         controller: 'TimetableEditDayCtrl'
-//       }
-//     }
-//   })
+
   .state('tab.timetable-edit', {
     url: '/timetable-edit',
     views: {
@@ -77,24 +69,24 @@ angular.module('starter.routes', [])
     }
   })
   
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
+//   .state('tab.chats', {
+//       url: '/chats',
+//       views: {
+//         'tab-chats': {
+//           templateUrl: 'templates/tab-chats.html',
+//           controller: 'ChatsCtrl'
+//         }
+//       }
+//     })
+//     .state('tab.chat-detail', {
+//       url: '/chats/:chatId',
+//       views: {
+//         'tab-chats': {
+//           templateUrl: 'templates/chat-detail.html',
+//           controller: 'ChatDetailCtrl'
+//         }
+//       }
+//     })
 
   .state('tab.account', {
     url: '/account',

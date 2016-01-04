@@ -7,7 +7,7 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('SelectUniversityCtrl', function($scope) {})
+// .controller('SelectUniversityCtrl', function($scope) {})
 .controller('ProfileSignUpCtrl', function($scope, $state, $ionicHistory) {
   $scope.data = {};
   
@@ -18,9 +18,6 @@ angular.module('starter.controllers', [])
     user.set("university", $scope.data.university);
     user.set("password", $scope.data.password);
     user.set("email", $scope.data.email);
-    
-    // Other fields can be set just like with Parse.Object
-    // user.set("somethingElse", "likeThis!");
     
     user.signUp(null, {
       success: function(user) {

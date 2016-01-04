@@ -1,20 +1,18 @@
 <ion-view view-title="Timetable">
   <ion-content class="padding">
-    <div class="list card" ng-repeat="thing in things">
-      <div class="item item-divider">{{thing.day}}</div>
+    <div class="list card" ng-repeat="timetable in timetables">
+      <div class="item item-divider">{{timetable.day}}</div>
       <div class="item item-body">
         <div>
-          {{thing.module}} at {{thing.venue}} <br>
-          From <b>{{thing.start_time}}</b> to <b>{{thing.end_time}}</b><br>
-          By {{thing.lecturer}}
+          {{timetable.module}} at {{timetable.venue}} <br>
+          From <b>{{timetable.start_time}}</b> to <b>{{timetable.end_time}}</b><br>
+          By {{timetable.lecturer}}
         </div>
       </div>
     </div>
-    <!--<a class="button button-calm button-block" href="#/tab/timetable-edit">Edit timetable</a>-->
   </ion-content>
   <div class="bar bar-footer bar-calm">
     <a class="button button-clear" href="#/tab/timetable-add"><span class="ion-plus-round"></span> Add a class</a>
-    <!--<div class="title">Title</div>-->
     <a class="button button-clear" href="#/tab/timetable-edit"><span class="ion-edit"></span> Edit timetable</a>
   </div>
 </ion-view>

@@ -1,44 +1,11 @@
 <ion-view view-title="Edit class">
   <ion-content class="">
       <ion-list show-delete="false" can-swipe="true">
-          <ion-item ng-repeat="thing in things">
-              {{thing.module}} on {{thing.day}}
-              <ion-option-button class="button-assertive ion-trash-b" ng-click="remove(thing)"></ion-option-button>
-              <!--<ion-delete-button class="ion-trash-b" ng-click="remove(thing)"></ion-delete-button>-->
+          <ion-item ng-repeat="timetable in timetables">
+              {{timetable.module}} on {{timetable.day}}
+              <ion-option-button class="button-assertive ion-trash-b" ng-click="remove(timetable)"></ion-option-button>
           </ion-item>
       </ion-list>
-      <!--<form class="list">
-        <label class="item item-input">
-          <span class="input-label">Subject</span><input type="text">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Code</span><input type="text">
-        </label>
-        <label class="item item-select">
-          <span class="input-label">Select day</span>
-          <select>
-            <option>Monday</option>
-            <option>Tuesday</option>
-            <option>Wednesday</option>
-            <option>Thursday</option>
-            <option>Friday</option>
-            <option>Saturday</option>
-            <option>Sunday</option>
-          </select>
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Time</span><input type="text">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Venue</span><input type="text">
-        </label>
-        <div class="spacer" style="height: 40px;"></div>
-        <!--<button type="submit" class="button button-balanced button-block">Save changes</button>
-      </form>-->
   </ion-content>
-  <!--<div class="bar bar-footer bar-balanced item-input-inset">
-    <button class="button button-clear button-block">
-      Save changes
-    </button>-->
   </div>
 </ion-view>
